@@ -1,18 +1,19 @@
+<%
+logfile        = scope.lookupvar('memcached::logfile')
+listen_address = scope.lookupvar('memcached::listen_address')
+memcached_port = scope.lookupvar('memcached::memcached_port')
+user           = scope.lookupvar('memcached::user')
+maxconn        = scope.lookupvar('memcached::maxconn')
+cachesize      = scope.lookupvar('memcached::cachesize')
+extra          = scope.lookupvar('memcached::extra')
+-%>
 # This file is managed by puppet!
 # Module: memcached
-
 -d
-
 logfile <%= logfile %>
-
 -l <%= listen_address %>
-
 -p <%= memcached_port %>
-
 -u <%= user %>
-
 -c <%= maxconn %>
-
 -m <%= cachesize %>
-
 <%= extra %>
